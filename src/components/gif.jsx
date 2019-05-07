@@ -5,7 +5,6 @@ import React, { Component } from 'react';
 class Gif extends Component {
 
   handleClick = (props) => {
-    // TODO : change the state of the app
     if (this.props.selectGif) {
       this.props.selectGif(this.props.gifId);
     }

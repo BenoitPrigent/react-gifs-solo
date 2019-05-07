@@ -13,6 +13,7 @@ class App extends Component {
 
     this.state = {
       selectedGif: "ZNLn0neQ5S5DIv1S1s",
+      selectedGifClicked: false,
       gifs: []
     }
 
@@ -37,13 +38,28 @@ class App extends Component {
       })
   }
 
+  handleSelectedGifClick = () => {
+    console.log("coucou")
+    this.setState({
+      selectedGifClicked: !this.state.selectedGifClicked
+    })
+  }
+
+  gifSelectedClasses = () => {
+    let classes = "selected-gif"
+    if (this.state.selectedGifClicked) {
+      classes += " selected-gif-clicked"
+    }
+    return classes
+  }
+
   render() {
     // const giflistid = ["QmGNyawKfJiKhU48Ni", "2fOn4XZlzmPBxQuLv4", "ZNLn0neQ5S5DIv1S1s"];
     return (
       <div>
         <div className="left-scene">
           <SearchBar searchGif={this.searchGif} />
-          <div className="selected-gif">
+          <div className={this.gifSelectedClasses()} onClick={this.handleSelectedGifClick} >
             <Gif gifId={this.state.selectedGif} />
           </div>
 

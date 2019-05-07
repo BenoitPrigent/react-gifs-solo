@@ -12,10 +12,11 @@
   .form-search {
     padding: 60px 60px 60px 120px;
     border: none;
+    border-radius: 80px;
     font-size: 2.6em;
     box-shadow: none;
     &:focus {
-      box-shadow: none;
+      box-shadow: 0 3px 10px 0 rgba(48,35,173,0.21) !important;
     }
   }
 
@@ -27,6 +28,10 @@
     font-family: FontAwesome;
     font-size: 2.6em;
     opacity: 0.4;
+  }
+
+  .selected-gif-clicked {
+    background-color: #D3F4FC;
   }
 
   .selected-gif {
